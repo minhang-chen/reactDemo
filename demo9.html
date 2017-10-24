@@ -9,25 +9,48 @@
 </head>
 <body>
     <div class="example"></div>
+    <!--<script type="text/babel">-->
+        <!--var Input = React.createClass({-->
+            <!--getInitialState: function () {-->
+                <!--return {value: 'Hollo!'};-->
+            <!--},-->
+            <!--handleChange: function (event) {-->
+                <!--this.setState({value: event.target.value});-->
+            <!--},-->
+            <!--render: function () {-->
+                <!--var value = this.state.value;-->
+                <!--return (-->
+                    <!--<div>-->
+                        <!--<input type="text" value={value} onChange={this.handleChange}/>-->
+                        <!--<p>{value}</p>-->
+                    <!--</div>-->
+                <!--);-->
+            <!--}-->
+        <!--});-->
+        <!--ReactDOM.render(<Input/>, document.body);-->
+    <!--</script>-->
     <script type="text/babel">
-        var Input = React.createClass({
-            getInitialState: function () {
-                return {value: 'Hollo!'};
-            },
-            handleChange: function (event) {
-                this.setState({value: event.target.value});
-            },
-            render: function () {
-                var value = this.state.value;
-                return (
-                    <div>
-                        <input type="text" value={value} onChange={this.handleChange}/>
-                        <p>{value}</p>
-                    </div>
-                );
+        class Input extends React.Component{
+            constructor(...args){
+                super(...args);//超类、父类
+                this.state = {value: ''};
             }
-        });
-        ReactDOM.render(<Input/>, document.body);
+            fn(event){
+                this.setState({
+                    value:event.target.value
+                })
+            }
+            render(){
+                return <div>
+                    <input type="text" onChange={this.fn.bind(this)}/>
+                    <span>{this.state.value}</span>
+                </div>
+            }
+        }
+        ReactDOM.render(
+            <Input/>,
+            document.querySelector('.example')
+        )
     </script>
 </body>
 </html>

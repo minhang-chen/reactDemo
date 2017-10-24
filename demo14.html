@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+</head>
+<body>
+<div class="m-clock"></div>
+<script type="text/babel">
+    class Clock extends React.Component{
+        constructor(...args){
+            super(...args);
+            this.state ={h:0,m:0,s:0};
+            var _this = this;
+            setInterval(function () {
+                _this.tick();
+            },1000)
+        }
+        componentDidMount(){
+            this.tick();
+        }
+        componentWillUpdate(){
+            console.log('即将更新')
+        }
+        tick(){
+            var oDate = new Date();
+            this.setState({
+                h:oDate.getHours(),
+                m:oDate.getMinutes(),
+                s:oDate.getSeconds()
+            })
+        }
+        render(){
+            return <div>
+                <span>{this.state.h}</span>:
+                <span>{this.state.m}</span>:
+                <span>{this.state.s}</span>
+            </div>
+        }
+    }
+    ReactDOM.render(
+        <Clock/>,
+        document.querySelector('.m-clock')
+    )
+</script>
+</body>
+</html>

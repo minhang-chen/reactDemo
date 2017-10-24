@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制表单的value</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+    <script src="build/jquery.min.js"></script>
+</head>
+<body>
+<blue-view></blue-view>
+<script type="text/babel">
+    class Form extends React.Component{
+        render(){
+            return <form action="">
+                用户名：<input type="text" defaultValue="blue"/>
+                是否接收邮件<input type="checkbox" defaultChecked="true"/>
+            </form>
+        }
+    }
+    ReactDOM.render(
+        <Form/>,
+        document.querySelector('blue-view')
+    )
+</script>
+</body>
+</html>

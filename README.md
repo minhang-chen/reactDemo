@@ -1,5 +1,5 @@
 # reactDemo
-按照阮一峰老师的教程写的demo
+按照多个教程写的demo
 
 demo1—ReactDOM.render()
 
@@ -17,6 +17,10 @@ demo8—getInitialState(定义初始化状态),this.state(读取属性),this.set
 
 demo9—表单
 
+    表单原件的问题：
+    1.用value，改成dafaultValue否则改变不了value值
+    2.用checked，改成defaultChecked
+
 demo10—组件的生命周期
     
     三个状态
@@ -24,13 +28,15 @@ demo10—组件的生命周期
     Updating：正在被重新渲染
     Unmounting：已移出真实 DOM
     
-    五种处理函数
+    六种处理函数
     componentWillMount()
     componentDidMount()
     componentWillUpdate(object nextProps, object nextState)
     componentDidUpdate(object prevProps, object prevState)
     componentWillUnmount()
+    componentWillReceiveProps() 组件参数更新
     
 demo11—Ajax
+
     
     

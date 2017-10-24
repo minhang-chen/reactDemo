@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制表单的value</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+    <script src="build/jquery.min.js"></script>
+</head>
+<body>
+<blue-view></blue-view>
+<script type="text/babel">
+    class TmpComp extends React.Component{
+        constructor(...args){
+            super(...args)
+        }
+        fn1(){
+            alert('父级');
+        }
+        fn2(ev){
+            alert('子级');
+            ev.nativeEvent.stopImmediatePropagation();
+        }
+        render(){
+            return <div onClick={this.fn1.bind(this)}>
+                <div onClick={this.fn2.bind(this)}>事件冒泡</div>
+            </div>
+        }
+    }
+    ReactDOM.render(
+        <TmpComp/>,
+        document.querySelector('blue-view')
+    )
+</script>
+</body>
+</html>

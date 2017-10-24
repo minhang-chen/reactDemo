@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建列表</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+</head>
+<body>
+<div class="example"></div>
+<script type="text/babel">
+    class Item extends React.Component{
+        constructor(...args){
+            super(...args);
+        }
+        render(){
+            return <li>{this.props.value}</li>
+        }
+    }
+    class List extends React.Component{
+        constructor(...arg){
+            super(...arg);
+            this.state = {arr:[12,8,59,10]}
+            this.arr = [12,8,59,10];
+        }
+        fn(){
+            this.setState({
+                arr:this.state.arr.concat([Math.random()])
+            });
+        }
+        render(){
+            var result = [];
+            this.state.arr.map(function (res,index) {
+                result.push(<Item value={res} key={index}></Item>)
+            });
+            return <ul>
+                <input type="button" value="按钮" onClick={this.fn.bind(this)}/>
+                {result}
+            </ul>
+        }
+    }
+    ReactDOM.render(
+        <List/>,
+        document.querySelector('.example')
+    )
+</script>
+</body>
+</html>

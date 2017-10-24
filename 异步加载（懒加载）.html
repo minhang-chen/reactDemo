@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步加载</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+    <script src="build/jquery.min.js"></script>
+    <style>
+        img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<blue-view></blue-view>
+<script type="text/babel">
+    class LazyLoad extends React.Component{
+        constructor(...args){
+            super(...args);
+            this.aImagePath = this.props.imgs.split(',');
+            var _this = this;
+            window.onscroll = function () {
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            }
+        }
+        render(){
+            var arr = [];
+            this.aImagePath.map(function (res, index) {
+                arr.push(<img data-src={res} key={index} />)
+            })
+            return <div ref="div1">
+                {arr}
+            </div>
+        }
+    }
+    $(function () {
+        ReactDOM.render(
+            <LazyLoad imgs="1.jpg,2.jpg,3.jpg,4.jpg"/>,
+            $('blue-view')[0]
+        )
+    })
+</script>
+</body>
+</html>
