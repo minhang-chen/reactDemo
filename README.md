@@ -38,5 +38,20 @@ demo10—组件的生命周期
     
 demo11—Ajax
 
+#react原生事件和合成事件：
+
+合成事件—在jsx中直接绑定的事件
+
+    <a ref="aaa" onClick = {}><a>
+
+原生事件—通过js原生代码绑定的事件
+ 
+ 
+ 阻止事件冒泡
+ 
+    1、阻止合成事件之间的冒泡，用e.stopPropagation()
+     
+    2、阻止合成事件于最外层document上的事件间的冒泡，用e.nativeEvent.stopImmediatePropagation()
     
+    3、阻止合成事件与除最外层document上的原生事件上的冒泡，通过判断e.target来避免
     

@@ -20,7 +20,11 @@
         }
         fn2(ev){
             alert('子级');
-            ev.nativeEvent.stopImmediatePropagation();
+            ev.stopPropagation();
+//            ev.isPropagationStopped = function () {
+//                return true
+//            };
+//            ev.nativeEvent.stopImmediatePropagation();
         }
         render(){
             return <div onClick={this.fn1.bind(this)}>
