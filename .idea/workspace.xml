@@ -280,7 +280,7 @@
       <workItem from="1508202702845" duration="301000" />
       <workItem from="1508203034630" duration="20417000" />
       <workItem from="1508824088232" duration="15694000" />
-      <workItem from="1508895568241" duration="8059000" />
+      <workItem from="1508895568241" duration="8505000" />
     </task>
     <task id="LOCAL-00001" summary="*">
       <created>1508143014086</created>
@@ -310,11 +310,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508914287901</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="react练习">
+      <created>1508914299791</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1508914299791</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82965000" />
+    <option name="totallyTimeSpent" value="83411000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
